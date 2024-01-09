@@ -9,11 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var countButton: UIButton!
+    @IBOutlet weak private var countButton: UIButton!
     
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak private var countLabel: UILabel!
     
-    @IBOutlet weak var textCounterView: UITextView!
+    @IBOutlet weak private var textCounterView: UITextView!
+    
+    private var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +24,7 @@ class ViewController: UIViewController {
         textCounterView.isEditable = false
     }
     
-    var counter = 0
-    
-    func date() -> String {
+    private func getCurrentDateString() -> String {
         let todayDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -35,29 +35,29 @@ class ViewController: UIViewController {
         return dateString
     }
     
-    @IBAction func minusCounterButton(_ sender: UIButton) {
+    @IBAction private func minusCounterButton(_ sender: UIButton) {
         if counter == 0 {
-            textCounterView.text.append("\n «\(date()): попытка уменьшить значение счётчика ниже 0»")
+            textCounterView.text.append("\n «\(getCurrentDateString()): попытка уменьшить значение счётчика ниже 0»")
         }
         if counter > 0 && counter != 0 {
             var minusCounter = counter - 1
             counter = minusCounter
             countLabel.text = String(minusCounter)
-            textCounterView.text.append("\n «\(date()): значение изменено на -1»")
+            textCounterView.text.append("\n «\(getCurrentDateString()): значение изменено на -1»")
         }
     }
     
-    @IBAction func plusCounterButton(_ sender: UIButton) {
+    @IBAction private func plusCounterButton(_ sender: UIButton) {
         var plusCounter = counter + 1
         counter = plusCounter
         countLabel.text = String(plusCounter)
-        textCounterView.text.append("\n «\(date()): значение изменено на +1»")
+        textCounterView.text.append("\n «\(getCurrentDateString()): значение изменено на +1»")
     }
     
-    @IBAction func zeroCounterButton(_ sender: UIButton) {
+    @IBAction private func zeroCounterButton(_ sender: UIButton) {
         counter = 0
         countLabel.text = String(counter)
-        textCounterView.text.append("\n «\(date()): значение сброшено»")
+        textCounterView.text.append("\n «\(getCurrentDateString()): значение сброшено»")
     }
 }
 
