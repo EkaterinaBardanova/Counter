@@ -82,8 +82,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="count" destination="Tdq-DY-e2e" id="obi-P8-cgY"/>
                         <outlet property="countButton" destination="SiO-K2-YWA" id="7EF-XD-gEh"/>
+                        <outlet property="countLabel" destination="Tdq-DY-e2e" id="B6a-jL-NxO"/>
                         <outlet property="historyOfChanges" destination="LGF-wz-mZi" id="Aqb-mr-XL4"/>
                         <outlet property="minusButton" destination="Hf6-zH-iiF" id="jLc-Ch-guT"/>
                         <outlet property="zeroButton" destination="5xq-4X-qoV" id="gqg-V5-jQa"/>
@@ -102,7 +102,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
